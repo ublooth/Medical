@@ -3,3 +3,27 @@
   margin: 0;
   padding: 0;
 }
+img {
+    width: 100%;
+    height: auto;
+}
+a {
+    color: #333;
+    text-decoration: none;/*清除下划线*/
+    /* display: inline-block; */
+}
+.f-s14 {
+    font-size: 14px;
+}
+.crude {
+    font-weight: bolder; /* 字体加粗 */
+}
+body {
+    font-size: 0;
+    background-color: rgba(244, 244, 244, 1);
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
