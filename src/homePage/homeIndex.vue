@@ -26,18 +26,18 @@
     <van-button type="default">默认按钮</van-button><br>
     <van-button type="primary">主要按钮</van-button>
     <div class="navigation">
-      <ul class="ngn">
-        <li></li>
-        <li></li>
-      </ul>
-      <ul class="ngn">
-        <li></li>
-        <li></li>
-      </ul>
-      <ul class="ngn">
-        <li></li>
-        <li></li>
-      </ul>
+      <div class="ngn">
+        <div style="height:27px"><img src="../assets/idx.png" alt=""></div>
+        <div style="font-size:12px">首页</div>
+      </div>
+      <div class="ngn">
+        <div></div>
+        <div></div>
+      </div>
+      <div class="ngn">
+        <div></div>
+        <div></div>
+      </div>
     </div>
   </div>
 </template>
