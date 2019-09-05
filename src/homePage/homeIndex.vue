@@ -42,12 +42,24 @@
   </div>
 </template>
 <script>
+import Apis from '../apis'
+
 export default {
    //created 实例创建完成后被立即调用
   created:function() {
     console.log('this1',this)
     console.log('this2',this.$store)
     console.log('this2',this.$store.state.test)
+
+    Apis.getUserInfo()
+    .then((data) => {
+      console.log('data', data)
+    })
+
+    Apis.getMembers()
+    .then((data) => {
+      console.log('data', data)
+    })
   }
   
 }
