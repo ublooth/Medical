@@ -25,100 +25,36 @@
     <p style="font-size:14px">vuex：{{$store.state.test}}</p>
     <van-button type="default">默认按钮</van-button><br>
     <van-button type="primary">主要按钮</van-button>
-    <div class="navigation">
-      <div class="ngn">
-        <div style="height:27px"><img src="../assets/idx.png" alt=""></div>
-        <div style="font-size:12px">首页</div>
-      </div>
-      <div class="ngn">
-        <div></div>
-        <div></div>
-      </div>
-      <div class="ngn">
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    
   </div>
 </template>
 <script>
+import Apis from '../apis'
+
 export default {
    //created 实例创建完成后被立即调用
   created:function() {
-    console.log('this1',this)
-    console.log('this2',this.$store)
-    console.log('this2',this.$store.state.test)
+    // console.log('this1',this)
+    // console.log('this2',this.$store)
+    // console.log('this2',this.$store.state.test)
+
+    Apis.getUserInfo()
+    .then((data) => {
+      console.log('data个人', data)
+    })
+    Apis.getMembers()
+    .then((data) => {
+      console.log('data成员', data)
+    })
+    
+    // console.log('11',this.$route)
+  
   }
   
 }
 </script>
 <style>
-/* 头部 */
-.head {
-  width: 100%;
-  height: 44px;
-  /* line-height: 44px; */
-  text-align: center;
-  font-size: 18px;
-  position: relative;
-}
-.rightKeys {
-  display: inline-block;
-  width: 65px;
-  height: 22px;
-  border: 1px solid rgba(0, 0, 0, 0.24);
-  border-radius:12px;
-  position: absolute;
-  right: 12px;
-  top: 10px;
-}
-.key li {
-  display: inline-block;
-  vertical-align: middle;
-}
-.leftKey {
-  height: 23px;
-}
-.leftKey div {
-  display: inline-block;
-  vertical-align: middle;
-}
-.small {
-  width: 3px;
-  height: 3px;
-  background-color: rgba(0, 0, 0, 0.87);
-  border-radius: 50%;
-}
-.large {
-  margin: 0px 2px;
-  width: 5px;
-  height: 5px;
-  background-color: rgba(0, 0, 0, 0.87);
-  border-radius: 50%;
-}
-.line {
-  width: 1px;
-  height: 10px;
-  background: rgba(0, 0, 0, 0.24);
-  margin: 0 8px;
-}
-.aod {
-  width: 11px;
-  height: 11px;
-  border: 1px solid rgba(0, 0, 0, 0.87);
-  border-radius: 50%;
-  position: relative;
-}
-.whn {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.87);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -2.5px 0 0 -2.5px;
-}
+
 /* 横幅 */
 .banner {
   width: 100%;
@@ -136,17 +72,5 @@ export default {
   color: rgba(250, 209, 120, 1);
   font-size: 20px;
 }
-/* 底部导航 */
-.navigation {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  height: 49px;
-}
-.ngn {
-  display: inline-block;
-  width: 33.33%;
-  height: 49px;
-  background-color: rgba(250, 209, 120, .5);
-}
+
 </style>
